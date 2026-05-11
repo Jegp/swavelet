@@ -12,7 +12,7 @@ Real-time streams (audio, biosignals, sensors) need *causal* wavelets, and signa
 
 The spiking variants double as event-driven ADCs, encoding continuous inputs straight into sparse spike trains, skipping the uniform sampler entirely.
 
-![Wavelet spike coding diagram](diagram.png)
+![Wavelet spike coding diagram](https://github.com/Jegp/swavelet/blob/main/diagram.png?raw=true)
 
 
 ## Usage
@@ -57,7 +57,7 @@ nir.write("spiking_doe.nir", nir_graph)
 
 The graph is a single chain: a fanout `Affine` broadcasts the scalar input across the K smoothing channels, the multi-channel `LI` bank produces `L_1..L_K`, the connectivity `Affine` wires each bandpass row with ±1 weights between adjacent scales (and the lowpass row taps `L_K` directly), and a multi-channel `LIF` emits the spike output. Diagram via [NirViz](https://github.com/open-neuromorphic/nirviz):
 
-![Spiking DoE NIR graph](spiking_doe_nir.png)
+![Spiking DoE NIR graph](https://github.com/Jegp/swavelet/blob/main/spiking_doe_nir.png?raw=true)
 
 ### Wavelet implementations (spiking and non-spiking)
 

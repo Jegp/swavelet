@@ -10,12 +10,14 @@ __pycache__/
 # Virtualenvs
 .venv/
 venv/
+uv.lock
 
 # Build / packaging
 build/
 dist/
 *.whl
 *.tar.gz
+swavelet/_version.py
 
 # Nix
 result

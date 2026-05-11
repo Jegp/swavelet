@@ -1,5 +1,7 @@
 """Package for spiking wavelet transforms and related tools."""
 
+from ._version import __version__
+
 from .wavelet import Wavelet
 from .haar import HaarWavelet
 from .morlet import MorletWavelet
@@ -21,6 +23,7 @@ SpikingDoT = SpikingDoTWavelet
 SpikingDoE = SpikingDoEWavelet
 
 __all__ = [
+    "__version__",
     "Wavelet",
     "HaarWavelet",
     "MorletWavelet",

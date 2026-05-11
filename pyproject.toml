@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "swavelet"
+version = "0.1.0"
+description = "Spiking wavelets in JAX"
+readme = "README.md"
+authors = [{ name = "Jens Egholm Pedersen", email = "jens@jepedersen.dk" }]
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+dependencies = [
+    "jax",
+    "nir",
+    "numpy",
+    "scipy",
+    "pywavelets",
+]
+
+[project.optional-dependencies]
+datasets = [
+    "torch",
+    "torchaudio",
+    "tqdm",
+    "matplotlib",
+]
+test = [
+    "pytest",
+    "pytest-xdist",
+    "nir",
+]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[project.urls]
+Repository = "https://github.com/jegp/swavelet"
+
+[tool.hatch.build.targets.wheel]
+packages = ["swavelet"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "examples"]

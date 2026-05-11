@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Virtualenvs
+.venv/
+venv/
+
+# Build / packaging
+build/
+dist/
+*.whl
+*.tar.gz
+
+# Nix
+result
+result-*
+
+# Experiment outputs
+results/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/

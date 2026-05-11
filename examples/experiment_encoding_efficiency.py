@@ -21,7 +21,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import numpy as np
 import jax
 import jax.numpy as jnp
-import tqdm
 
 from swavelet import morlet
 from swavelet import haar, szu
@@ -547,6 +546,7 @@ def run_experiment(datasets, c_values, spiking_thresholds, n_eval_signals, outpu
             wavelets, n_ch = create_all_wavelets(c, dt, config["f_min"], config["f_max"], config["chunk_size"])
             print(f"\n  c={c:.4g}  (n_channels={n_ch})")
 
+            import tqdm
             for wname, (wav, is_spiking) in tqdm.tqdm(
                 list(wavelets.items()), desc=f"    wavelets (c={c:.3g}, n_ch={n_ch})", leave=False,
             ):

@@ -17,7 +17,7 @@ The spiking variants double as event-driven ADCs, encoding continuous inputs str
 
 ## Usage
 
-**Install** using [uv](https://docs.astral.sh/uv/): `uv sync`
+**Install** via [uv](https://docs.astral.sh/uv/): `uv add swavelet` or via [pip](https://pypi.org/project/pip/): `pip install swavelet`
 
 ### Encoding and decoding (non-spiking)
 ```python

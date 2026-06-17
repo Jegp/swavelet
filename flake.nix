@@ -20,12 +20,13 @@
 
           shellHook = ''
             export PYTHONNOUSERSITE=1
-            export UV_PYTHON=${python}/bin/python
+            # Binary wheels (jaxlib) need a standard C++/zlib runtime on the path.
+            export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath [ pkgs.stdenv.cc.cc.lib pkgs.zlib ]}''${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
             if [ ! -d .venv ]; then
-              uv venv --python "$UV_PYTHON"
-              uv pip install -e '.[test]'
+              uv venv --python ${python}/bin/python
             fi
             source .venv/bin/activate
+            uv pip install -e '.[test]'
           '';
         };
       });
